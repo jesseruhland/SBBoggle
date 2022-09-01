@@ -19,9 +19,9 @@ def display_board():
     """begin a new game, create a new game-board, display HTML"""
     board_list = boggle_game.make_board()
     session['board'] = board_list
-    session['statistics'] = statistics
     times_played = statistics['times_played']
     high_score = statistics['high_score']
+    session['statistics'] = statistics
 
     return render_template("boggle_board.html", board_list=board_list, times_played=times_played, high_score=high_score)
 
