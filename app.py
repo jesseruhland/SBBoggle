@@ -19,6 +19,7 @@ def display_board():
     """begin a new game, create a new game-board, display HTML"""
     board_list = boggle_game.make_board()
     session['board'] = board_list
+    session['statistics'] = statistics
     times_played = statistics['times_played']
     high_score = statistics['high_score']
 
@@ -51,5 +52,6 @@ def update_high_score():
     new_score = int(req['high_score'])
     if new_score > statistics.get('high_score'):
         statistics['high_score'] = new_score
+    
     return "updated"
 
